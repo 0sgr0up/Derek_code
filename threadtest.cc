@@ -40,8 +40,7 @@ const char * mailContent[10];
 Semaphore ** chopstickS;
 Semaphore ** mailAccessS;
 
-void SimpleThread(int which)
-{
+void SimpleThread(int which){
     int num;
     
     for (num = 0; num < 5; num++) {
@@ -51,8 +50,7 @@ void SimpleThread(int which)
 }
 
 //Begin code changes by Hoang Pham
-void CheckInput(int which)
-{
+void CheckInput(int which){
 	char input[100];
 	printf("\nPlease enter your input: ");
 	gets(input);
@@ -110,8 +108,7 @@ void CheckInput(int which)
 	printf("\n");
 }
 
-void ShoutOutLoud(int which)
-{
+void ShoutOutLoud(int which){
 	const char *a[8];
 	a[0] = "We are watching the Packers and Falcons game";
 	a[1] = "We are drinking rasperry sprite";
@@ -211,8 +208,7 @@ void think(int id){
 	}	
 }
 
-void Dining(int id)
-{
+void Dining(int id){
 	printf("\n%s said: Sitting down.",
 		currentThread->getName());
 	currentThread->Yield();
@@ -526,9 +522,10 @@ ThreadTest()
 		char * numpeople = new char[100];
 		gets(numpeople);
 		//char * num1 = num;
-		while(atoi(numpeople)==0  || checkInt(numpeople)){
+		while(atoi(numpeople)==0 ||atoi(numpeople)==1 || checkInt(numpeople)){
 			printf("\nIncorrect Input\nPlease enter number of people go to the post office: ");
 			gets(numpeople);
+			
 		}
 		printf("\nPlease enter the size of each mail box: ");
 		char * mailsize = new char[100];
